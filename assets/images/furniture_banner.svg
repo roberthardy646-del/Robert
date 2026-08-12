@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bannerBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c0906" />
+      <stop offset="50%" stop-color="#1f140e" />
+      <stop offset="100%" stop-color="#090604" />
+    </linearGradient>
+
+    <linearGradient id="warmLight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.35" />
+      <stop offset="50%" stop-color="#d4af37" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="transparent" />
+    </linearGradient>
+
+    <linearGradient id="woodPanels" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#78350f" />
+      <stop offset="25%" stop-color="#92400e" />
+      <stop offset="50%" stop-color="#451a03" />
+      <stop offset="75%" stop-color="#78350f" />
+      <stop offset="100%" stop-color="#270e02" />
+    </linearGradient>
+
+    <linearGradient id="goldAcc" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#d4af37" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1200" height="400" fill="url(#bannerBg)" />
+
+  <!-- Wall Architectural Wooden Slat Panels -->
+  <g opacity="0.4">
+    <rect x="0" y="0" width="40" height="400" fill="url(#woodPanels)" />
+    <rect x="50" y="0" width="40" height="400" fill="url(#woodPanels)" />
+    <rect x="100" y="0" width="40" height="400" fill="url(#woodPanels)" />
+    <rect x="150" y="0" width="40" height="400" fill="url(#woodPanels)" />
+    <rect x="200" y="0" width="40" height="400" fill="url(#woodPanels)" />
+    <rect x="250" y="0" width="40" height="400" fill="url(#woodPanels)" />
+    <rect x="300" y="0" width="40" height="400" fill="url(#woodPanels)" />
+    <rect x="350" y="0" width="40" height="400" fill="url(#woodPanels)" />
+  </g>
+
+  <!-- Warm Pendant Light Glow -->
+  <circle cx="850" cy="80" r="180" fill="url(#warmLight)" />
+  <line x1="850" y1="0" x2="850" y2="80" stroke="url(#goldAcc)" stroke-width="2" />
+  <ellipse cx="850" cy="80" rx="20" ry="12" fill="#fbbf24" />
+
+  <!-- Hero Furniture Silhouette: Scandinavian Mid-Century Living Room Set -->
+  
+  <!-- Modern Wood & Leather Armchair (Left Side) -->
+  <g transform="translate(180, 160)">
+    <path d="M 30 40 Q 90 20 150 40 C 160 90 150 140 140 170 L 40 170 C 30 140 20 90 30 40 Z" fill="#92400e" stroke="url(#goldAcc)" stroke-width="2" />
+    <rect x="25" y="160" width="130" height="25" rx="8" fill="#d97706" />
+    <!-- Tapered Brass Legs -->
+    <polygon points="35,185 20,230 32,230 45,185" fill="url(#goldAcc)" />
+    <polygon points="145,185 130,230 142,230 155,185" fill="url(#goldAcc)" />
+  </g>
+
+  <!-- Modern Fluted Oak Dining Table & Pendant Lamp (Center/Right) -->
+  <g transform="translate(520, 180)">
+    <!-- Tabletop -->
+    <polygon points="40,90 480,90 440,130 80,130" fill="#b45309" stroke="url(#goldAcc)" stroke-width="2" />
+    <!-- Table Base -->
+    <polygon points="110,130 125,210 140,210 150,130" fill="url(#goldAcc)" />
+    <polygon points="410,130 395,210 380,210 370,130" fill="url(#goldAcc)" />
+    
+    <!-- Table Decorative Brass Vase & Plant -->
+    <path d="M 250 55 L 270 55 L 275 90 L 245 90 Z" fill="url(#goldAcc)" />
+    <path d="M 260 55 Q 240 20 230 10 Q 260 30 260 55 Z" fill="#10b981" />
+    <path d="M 260 55 Q 280 20 290 10 Q 260 30 260 55 Z" fill="#059669" />
+  </g>
+
+  <!-- Subtle Vignette Overlay -->
+  <rect width="1200" height="400" fill="none" stroke="url(#goldAcc)" stroke-width="1" opacity="0.3" />
+</svg>

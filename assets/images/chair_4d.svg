@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <defs>
+    <radialGradient id="bgGlow4D" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#d4af37" stop-opacity="0.3" />
+      <stop offset="60%" stop-color="#f59e0b" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="transparent" />
+    </radialGradient>
+
+    <linearGradient id="walnut3D" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b45309" />
+      <stop offset="30%" stop-color="#78350f" />
+      <stop offset="70%" stop-color="#451a03" />
+      <stop offset="100%" stop-color="#1c0a02" />
+    </linearGradient>
+
+    <linearGradient id="goldBrass3D" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a" />
+      <stop offset="25%" stop-color="#f59e0b" />
+      <stop offset="60%" stop-color="#d4af37" />
+      <stop offset="100%" stop-color="#78350f" />
+    </linearGradient>
+
+    <linearGradient id="emeraldVelvet4D" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399" />
+      <stop offset="30%" stop-color="#059669" />
+      <stop offset="70%" stop-color="#047857" />
+      <stop offset="100%" stop-color="#022c22" />
+    </linearGradient>
+
+    <!-- 4D Depth Shadow Filter -->
+    <filter id="shadow4D" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="25" stdDeviation="20" flood-color="#000000" flood-opacity="0.8" />
+      <feDropShadow dx="0" dy="10" stdDeviation="8" flood-color="#d4af37" flood-opacity="0.3" />
+    </filter>
+
+    <!-- 4D Sheen Light Reflection Filter -->
+    <linearGradient id="sheenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.4" />
+      <stop offset="30%" stop-color="#ffffff" stop-opacity="0" />
+      <stop offset="70%" stop-color="#ffffff" stop-opacity="0" />
+      <stop offset="100%" stop-color="#d4af37" stop-opacity="0.3" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Ambient Glow -->
+  <rect width="600" height="600" fill="#07090e" />
+  <circle cx="300" cy="300" r="260" fill="url(#bgGlow4D)" />
+
+  <!-- Outer 4D Spatial Depth Ring -->
+  <circle cx="300" cy="300" r="270" fill="none" stroke="url(#goldBrass3D)" stroke-width="3" opacity="0.4" />
+  <circle cx="300" cy="300" r="280" fill="none" stroke="url(#goldBrass3D)" stroke-width="1.5" stroke-dasharray="8 8" opacity="0.3" />
+
+  <!-- 4D Floor Shadow -->
+  <ellipse cx="300" cy="510" rx="190" ry="45" fill="#000000" opacity="0.85" filter="url(#shadow4D)" />
+
+  <!-- 4D Isometric Armchair Group -->
+  <g filter="url(#shadow4D)">
+    
+    <!-- Back Leg Left (3D Depth) -->
+    <polygon points="190,370 170,490 185,490 205,370" fill="#451a03" />
+    <!-- Back Leg Right (3D Depth) -->
+    <polygon points="390,370 370,490 385,490 405,370" fill="#451a03" />
+
+    <!-- 4D Main Cushion Base -->
+    <path d="M 130 330 Q 300 290 470 330 L 440 400 Q 300 370 160 400 Z" fill="url(#emeraldVelvet4D)" />
+    
+    <!-- Cushion Side Facet for 4D Perspective -->
+    <path d="M 160 400 Q 300 370 440 400 L 440 425 Q 300 395 160 425 Z" fill="#022c22" />
+
+    <!-- 4D Sculptural Backrest (Multi-Plane Isometric) -->
+    <path d="M 150 140 Q 300 90 450 140 C 480 230 460 310 440 350 Q 300 310 160 350 C 140 310 120 230 150 140 Z" fill="url(#walnut3D)" stroke="url(#goldBrass3D)" stroke-width="3" />
+
+    <!-- Inner Velvet Pillow Facet (Deep Layer) -->
+    <path d="M 175 165 Q 300 125 425 165 C 445 230 435 290 415 330 Q 300 295 185 330 C 165 290 155 230 175 165 Z" fill="url(#emeraldVelvet4D)" />
+
+    <!-- 4D Holographic Sheen Layer -->
+    <path d="M 175 165 Q 300 125 425 165 C 445 230 435 290 415 330 Q 300 295 185 330 C 165 290 155 230 175 165 Z" fill="url(#sheenGrad)" opacity="0.6" />
+
+    <!-- Front Leg Left (4D Front Plane) -->
+    <polygon points="160,400 135,530 155,530 185,400" fill="url(#goldBrass3D)" />
+    <!-- Front Leg Right (4D Front Plane) -->
+    <polygon points="440,400 415,530 435,530 465,400" fill="url(#goldBrass3D)" />
+
+    <!-- Brass Leg Foot Tips -->
+    <polygon points="135,510 132,530 152,530 155,510" fill="#fef08a" />
+    <polygon points="415,510 412,530 432,530 435,510" fill="#fef08a" />
+
+  </g>
+</svg>
