@@ -3,599 +3,1287 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Robert Hardy Furniture Studio - Bespoke Handcrafted Woodworking, Fine Seating & Architectural Interiors">
-  <meta name="keywords" content="Furniture Designer, Artisan Woodworker, Handcrafted Furniture, Custom Oak Table, Walnut Armchair, Interior Studio">
-  <title>Robert Hardy Furniture Studio | Bespoke Woodworking & Fine Interiors</title>
-  
-  <!-- FontAwesome 6 CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  <!-- Main Pure CSS Stylesheet -->
-  <link rel="stylesheet" href="index.css">
+  <title>Highcast Academy</title>
+
+  <style>
+    :root {
+      --navy: #071d49;
+      --navy-light: #0d2d67;
+      --gold: #f5b719;
+      --white: #ffffff;
+      --light: #f4f7fc;
+      --text: #17233d;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ================= NAVBAR ================= */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--navy);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 6%;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.2);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: white;
+      font-weight: 800;
+    }
+
+    /* School Logo */
+    .logo {
+      width: 50px;
+      height: 50px;
+      border: 3px solid var(--gold);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--gold);
+      font-size: 23px;
+      font-weight: 900;
+      background: white;
+    }
+
+    .brand span {
+      font-size: 18px;
+      letter-spacing: 0.5px;
+    }
+
+    .links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      list-style: none;
+    }
+
+    .links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .links a:hover {
+      color: var(--gold);
+    }
+
+    .apply {
+      background: var(--gold);
+      color: var(--navy) !important;
+      padding: 10px 17px;
+      border-radius: 7px;
+    }
+
+    .menu {
+      display: none;
+      color: white;
+      font-size: 27px;
+      cursor: pointer;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero {
+      min-height: 78vh;
+      display: flex;
+      align-items: center;
+      padding: 80px 7%;
+      color: white;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(7,29,73,0.95),
+          rgba(7,29,73,0.65),
+          rgba(7,29,73,0.2)
+        ),
+        url("https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+    }
+
+    .hero-content {
+      max-width: 700px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: 1.03;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 span {
+      color: var(--gold);
+    }
+
+    .hero p {
+      font-size: 20px;
+      max-width: 600px;
+      margin-bottom: 28px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      text-decoration: none;
+      font-weight: 800;
+      padding: 13px 23px;
+      border-radius: 7px;
+      margin-right: 10px;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    .btn.alt {
+      background: transparent;
+      color: white;
+      border: 1px solid white;
+    }
+
+    /* ================= GENERAL SECTIONS ================= */
+
+    section {
+      padding: 80px 7%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 42px;
+    }
+
+    .section-title h2 {
+      font-size: 36px;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .section-title p {
+      color: #667085;
+    }
+
+    /* ================= WHY CHOOSE US ================= */
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: white;
+      padding: 28px;
+      border-radius: 14px;
+      box-shadow: 0 8px 30px rgba(16,42,86,0.08);
+      border: 1px solid #e6ebf3;
+    }
+
+    .card h3 {
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    /* ================= ABOUT ================= */
+
+    .about {
+      background: var(--light);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 45px;
+      align-items: center;
+    }
+
+    .about-img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      border-radius: 18px;
+    }
+
+    .about h2 {
+      color: var(--navy);
+      font-size: 38px;
+      margin-bottom: 15px;
+    }
+
+    /* ================= MANAGEMENT ================= */
+
+    .people {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .person {
+      text-align: center;
+      background: var(--light);
+      border-radius: 14px;
+      padding: 24px;
+    }
+
+    .person-avatar {
+      width: 105px;
+      height: 105px;
+      border-radius: 50%;
+      margin: 0 auto 15px;
+      display: grid;
+      place-items: center;
+      background: var(--navy);
+      color: var(--gold);
+      font-size: 36px;
+      font-weight: 800;
+    }
+
+    .person h3 {
+      color: var(--navy);
+    }
+
+    /* ================= ADMISSION ================= */
+
+    .admission {
+      background: var(--light);
+    }
+
+    form {
+      max-width: 850px;
+      margin: auto;
+      background: white;
+      padding: 35px;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(16,42,86,0.08);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    label {
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      margin-top: 7px;
+      padding: 13px;
+      border: 1px solid #ccd5e3;
+      border-radius: 7px;
+      font: inherit;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .full {
+      grid-column: 1 / -1;
+    }
+
+    button {
+      border: 0;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    /* ================= CONTACT ================= */
+
+    .contact {
+      background: var(--navy);
+      color: white;
+    }
+
+    .contact .section-title h2 {
+      color: white;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      text-align: center;
+    }
+
+    .contact-box {
+      padding: 25px;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 12px;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+      background: #041331;
+      color: #dbe4f5;
+      text-align: center;
+      padding: 25px 7%;
+      font-size: 14px;
+    }
+
+    /* ================= MOBILE ================= */
+
+    @media (max-width: 800px) {
+
+      .menu {
+        display: block;
+      }
+
+      .links {
+        display: none;
+        position: absolute;
+        top: 76px;
+        left: 0;
+        right: 0;
+        background: var(--navy);
+        flex-direction: column;
+        padding: 25px;
+      }
+
+      .links.open {
+        display: flex;
+      }
+
+      .cards,
+      .people,
+      .contact-grid,
+      .about-grid,
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .full {
+        grid-column: auto;
+      }
+
+      .hero {
+        min-height: 70vh;
+        padding: 70px 7%;
+      }
+    }
+    /* ================= MANAGEMENT CAROUSEL ================= */
+
+.management {
+  background: white;
+}
+
+.management-carousel {
+  max-width: 950px;
+  margin: auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.management-slides {
+  width: 100%;
+  overflow: hidden;
+}
+
+.management-slide {
+  display: none;
+  grid-template-columns: 40% 60%;
+  min-height: 380px;
+  background: var(--light);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 35px rgba(7, 29, 73, 0.12);
+}
+
+.management-slide.active {
+  display: grid;
+  animation: managementFade 0.5s ease;
+}
+
+@keyframes managementFade {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+/* Management Image */
+
+.management-image {
+  background: var(--navy);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 380px;
+}
+
+
+/* Large Management Avatar */
+
+.person-avatar.large {
+  width: 190px;
+  height: 190px;
+  border: 7px solid var(--gold);
+  font-size: 80px;
+}
+
+
+/* Management Information */
+
+.management-info {
+  padding: 55px 45px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.management-info h3 {
+  color: var(--navy);
+  font-size: 32px;
+  margin-bottom: 5px;
+}
+
+.management-info h4 {
+  color: var(--gold);
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.management-info p {
+  color: #596579;
+  max-width: 500px;
+}
+
+
+/* Social Media Buttons */
+
+.management-socials {
+  display: flex;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.management-socials a {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: white;
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.management-socials a:hover {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+
+/* Carousel Buttons */
+
+.carousel-btn {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  border: none;
+  border-radius: 50%;
+  background: var(--navy);
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 5;
+  transition: 0.3s;
+}
+
+.carousel-btn:hover {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+
+/* Carousel Dots */
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.management-dot {
+  width: 12px;
+  height: 12px;
+  border: none;
+  border-radius: 50%;
+  background: #cbd3df;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.management-dot.active {
+  width: 30px;
+  border-radius: 10px;
+  background: var(--gold);
+}
+
+
+/* Mobile */
+
+@media (max-width: 800px) {
+
+  .management-carousel {
+    gap: 5px;
+  }
+
+  .management-slide {
+    grid-template-columns: 1fr;
+  }
+
+  .management-image {
+    min-height: 250px;
+  }
+
+  .person-avatar.large {
+    width: 140px;
+    height: 140px;
+    font-size: 60px;
+  }
+
+  .management-info {
+    padding: 30px 25px;
+  }
+
+  .management-info h3 {
+    font-size: 26px;
+  }
+
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    font-size: 18px;
+  }
+
+}
+
+  </style>
 </head>
+
 <body>
 
-  <!-- Pure CSS Hidden Radio Inputs for Tab Navigation -->
-  <input type="radio" name="profile-tab" id="tab-overview" class="tab-control" checked>
-  <input type="radio" name="profile-tab" id="tab-projects" class="tab-control">
-  <input type="radio" name="profile-tab" id="tab-experience" class="tab-control">
-  <input type="radio" name="profile-tab" id="tab-skills" class="tab-control">
-  <input type="radio" name="profile-tab" id="tab-contact" class="tab-control">
+  <!-- ================= NAVIGATION ================= -->
 
-  <!-- Pure CSS Hidden Checkboxes for Modals & Theme Switch -->
-  <input type="checkbox" id="theme-toggle-check" class="theme-control">
-  <input type="checkbox" id="modal-edit-toggle" class="modal-control">
-  <input type="checkbox" id="modal-share-toggle" class="modal-control">
+  <nav>
 
-  <div class="app-container">
-    
-    <!-- Top Navigation Bar -->
-    <header class="top-nav">
-      <a href="#" class="logo-brand">
-        <div class="logo-badge">
-          <i class="fa-solid fa-couch"></i>
-        </div>
-        <span>RH Studio</span>
+    <a class="brand" href="#home">
+
+      <!-- LOGO -->
+      <div class="logo">
+        H
+      </div>
+
+      <span>HIGHCAST ACADEMY</span>
+
+    </a>
+
+    <!-- Mobile Menu -->
+    <div
+      class="menu"
+      onclick="document.querySelector('.links').classList.toggle('open')">
+      ☰
+    </div>
+
+    <ul class="links">
+
+      <li>
+        <a href="#home">Home</a>
+      </li>
+
+      <li>
+        <a href="#about">About Us</a>
+      </li>
+
+      <li>
+        <a href="#management">Management</a>
+      </li>
+
+      <li>
+        <a href="#admission">Admission Form</a>
+      </li>
+
+      <li>
+        <a href="#contact">Contact Us</a>
+      </li>
+
+      <li>
+        <a class="apply" href="#admission">
+          Apply Now
+        </a>
+      </li>
+
+    </ul>
+
+  </nav>
+
+
+  <!-- ================= LANDING PAGE ================= -->
+
+  <header class="hero" id="home">
+
+    <div class="hero-content">
+
+      <h1>
+        Welcome to
+        <span>Highcast Academy</span>
+      </h1>
+
+      <p>
+        Raising excellent minds for a better tomorrow through
+        quality education, character development and a supportive
+        learning environment.
+      </p>
+
+      <a class="btn" href="#admission">
+        Apply Now
       </a>
 
-      <div class="nav-actions">
-        <!-- Pure CSS Theme Toggle Label -->
-        <label for="theme-toggle-check" class="theme-toggle-label" title="Toggle Light/Dark Theme">
-          <i class="fa-solid fa-sun icon-sun"></i>
-          <i class="fa-solid fa-moon icon-moon"></i>
-        </label>
-        
-        <!-- Pure CSS Edit Studio Info Modal Trigger -->
-        <label for="modal-edit-toggle" class="btn btn-secondary">
-          <i class="fa-solid fa-pen-to-square"></i>
-          <span>Edit Studio Info</span>
-        </label>
-      </div>
-    </header>
-
-    <!-- Main Profile Card Wrapper -->
-    <div class="profile-card-wrapper">
-      
-      <!-- Cover Banner Image -->
-      <div class="cover-banner">
-        <img src="assets/images/furniture_banner.svg" alt="Luxury Furniture Showroom & Studio Banner">
-        <div class="cover-overlay"></div>
-      </div>
-
-      <!-- Profile Header Content -->
-      <div class="profile-main-info">
-        <div class="profile-avatar-row">
-          
-          <div class="avatar-container">
-            <img class="avatar-img" src="assets/images/furniture_logo.svg" alt="Robert Hardy Furniture Studio Logo">
-            <div class="status-badge" title="Accepting Custom Commissions"></div>
-          </div>
-
-          <div class="header-cta-group">
-            <label for="tab-contact" class="btn btn-primary">
-              <i class="fa-solid fa-compass-drafting"></i>
-              <span>Commission Piece</span>
-            </label>
-            <label for="modal-share-toggle" class="btn btn-secondary" title="Share Studio" style="padding: 0.65rem 0.85rem;">
-              <i class="fa-solid fa-share-nodes"></i>
-            </label>
-          </div>
-
-        </div>
-
-        <!-- Identity Information -->
-        <div class="user-identity">
-          <div class="user-name-title">
-            <h1 class="user-name">Robert Hardy</h1>
-            <i class="fa-solid fa-circle-check verified-badge" title="Master Artisan & Furniture Designer"></i>
-            <span class="availability-pill">
-              <i class="fa-solid fa-circle" style="font-size: 0.5rem;"></i> Accepting Commissions
-            </span>
-          </div>
-
-          <p class="user-role">Master Artisan & Furniture Designer</p>
-
-          <div class="user-meta-pills">
-            <div class="meta-pill">
-              <i class="fa-solid fa-location-dot"></i>
-              <span>Portland, OR / Milan</span>
-            </div>
-            <div class="meta-pill">
-              <i class="fa-solid fa-envelope"></i>
-              <span>robert@rhfurniturestudio.com</span>
-            </div>
-            <div class="meta-pill">
-              <i class="fa-solid fa-globe"></i>
-              <span>rhfurniturestudio.com</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Quick Statistics Row -->
-        <div class="stats-grid">
-          <div class="stat-card">
-            <div class="stat-icon">
-              <i class="fa-solid fa-hammer"></i>
-            </div>
-            <div class="stat-info">
-              <div class="stat-number">12+ Yrs</div>
-              <div class="stat-label">Craftsmanship</div>
-            </div>
-          </div>
-
-          <div class="stat-card">
-            <div class="stat-icon">
-              <i class="fa-solid fa-couch"></i>
-            </div>
-            <div class="stat-info">
-              <div class="stat-number">180+</div>
-              <div class="stat-label">Bespoke Creations</div>
-            </div>
-          </div>
-
-          <div class="stat-card">
-            <div class="stat-icon">
-              <i class="fa-solid fa-tree"></i>
-            </div>
-            <div class="stat-info">
-              <div class="stat-number">100%</div>
-              <div class="stat-label">Sustainable Timber</div>
-            </div>
-          </div>
-
-          <div class="stat-card">
-            <div class="stat-icon">
-              <i class="fa-solid fa-award"></i>
-            </div>
-            <div class="stat-info">
-              <div class="stat-number">5.0 Star</div>
-              <div class="stat-label">Architect Rating</div>
-            </div>
-          </div>
-        </div>
-
-      </div>
+      <a class="btn alt" href="#about">
+        Learn More
+      </a>
 
     </div>
 
-    <!-- Pure CSS Navigation Tabs Bar -->
-    <nav class="tab-nav-bar">
-      <label for="tab-overview" class="tab-btn-label">
-        <i class="fa-solid fa-couch"></i> Studio Philosophy
-      </label>
-      <label for="tab-projects" class="tab-btn-label">
-        <i class="fa-solid fa-chair"></i> Collections
-      </label>
-      <label for="tab-experience" class="tab-btn-label">
-        <i class="fa-solid fa-hammer"></i> Craft & Process
-      </label>
-      <label for="tab-skills" class="tab-btn-label">
-        <i class="fa-solid fa-tree"></i> Timbers & Mastery
-      </label>
-      <label for="tab-contact" class="tab-btn-label">
-        <i class="fa-solid fa-compass-drafting"></i> Commissions
-      </label>
-    </nav>
+  </header>
 
-    <!-- Tab Pane: Studio Philosophy -->
-    <div class="tab-pane" id="overviewTab">
-      <div class="section-grid">
-        <div>
-          <div class="card">
-            <div class="card-header">
-              <h2 class="card-title">
-                <i class="fa-solid fa-feather"></i> Design Philosophy
-              </h2>
-            </div>
-            <div class="card-body">
-              <p>
-                At Robert Hardy Furniture Studio, every creation is an intersection of sculptural elegance, ergonomic comfort, and generational longevity. We honor traditional mortise-and-tenon joinery while shaping modern mid-century and Scandinavian minimalist forms.
-              </p>
-              <p>
-                We exclusively harvest sustainably certified hardwoods—American Black Walnut, European White Oak, and Quarter-sawn Sycamore—finishing each piece by hand with non-toxic organic oils and natural beeswax.
-              </p>
-            </div>
-          </div>
 
-          <div class="card">
-            <div class="card-header">
-              <h2 class="card-title">
-                <i class="fa-solid fa-trophy"></i> Studio Accolades
-              </h2>
-            </div>
-            <div class="card-body">
-              <ul class="accomplishment-list">
-                <li class="accomplishment-item">
-                  <div class="accomplishment-icon"><i class="fa-solid fa-check"></i></div>
-                  <div>
-                    <strong>International Furniture Design Award (2025)</strong> — Awarded Best Handcrafted Seating for the Sculptural Walnut Armchair Series.
-                  </div>
-                </li>
-                <li class="accomplishment-item">
-                  <div class="accomplishment-icon"><i class="fa-solid fa-check"></i></div>
-                  <div>
-                    <strong>Architectural Digest Showcase</strong> — Featured in AD Top 50 Artisan Craft & Architectural Woodworking Studios.
-                  </div>
-                </li>
-                <li class="accomplishment-item">
-                  <div class="accomplishment-icon"><i class="fa-solid fa-check"></i></div>
-                  <div>
-                    <strong>Zero-VOC Eco Finishing Standard</strong> — Pioneered organic cold-pressed oil and citrus hardwax sealing techniques.
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+  <!-- ================= WHY CHOOSE US ================= -->
 
-        <div>
-          <div class="card">
-            <div class="card-header">
-              <h2 class="card-title">
-                <i class="fa-solid fa-layer-group"></i> Specialty Timbers
-              </h2>
-            </div>
-            <div class="card-body">
-              <div class="tags-wrapper">
-                <span class="tag-pill"><i class="fa-solid fa-tree" style="color:var(--accent-primary);"></i> American Walnut</span>
-                <span class="tag-pill"><i class="fa-solid fa-tree" style="color:var(--accent-secondary);"></i> European Oak</span>
-                <span class="tag-pill"><i class="fa-solid fa-tree" style="color:#d97706;"></i> Reclaimed Teak</span>
-                <span class="tag-pill"><i class="fa-solid fa-gem" style="color:#fbbf24;"></i> Brass Inlays</span>
-                <span class="tag-pill"><i class="fa-solid fa-ribbon" style="color:#f43f5e;"></i> Italian Leather</span>
-                <span class="tag-pill"><i class="fa-solid fa-leaf" style="color:#10b981;"></i> Organic Oils</span>
-              </div>
-            </div>
-          </div>
+  <section>
 
-          <div class="card">
-            <div class="card-header">
-              <h2 class="card-title">
-                <i class="fa-solid fa-heart"></i> Craft Traditions
-              </h2>
-            </div>
-            <div class="card-body">
-              <div class="tags-wrapper">
-                <span class="tag-pill">🪵 Hand Planing</span>
-                <span class="tag-pill">📐 Dovetail Joinery</span>
-                <span class="tag-pill">✨ Hand French Polish</span>
-                <span class="tag-pill">🛋️ Custom Upholstery</span>
-                <span class="tag-pill">🏛️ Bespoke Interiors</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="section-title">
+
+      <h2>
+        Why Choose Highcast Academy?
+      </h2>
+
+      <p>
+        Education designed to help every learner grow, lead and succeed.
+      </p>
+
     </div>
 
-    <!-- Tab Pane: Furniture Collections -->
-    <div class="tab-pane" id="projectsTab">
-      <div class="projects-grid">
-        
-        <!-- Piece 1 -->
-        <div class="project-card">
-          <div class="project-thumb">
-            <img src="assets/images/table.svg" alt="Nordic White Oak Dining Table">
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">Nordic White Oak Dining Table</h3>
-            <p class="project-desc">Hand-carved solid European white oak tabletop with subtle brass tapered legs. Comfortably seats 8-10 guests with organic hardwax oil finish.</p>
-            <div class="project-tags">
-              <span class="project-tag">White Oak</span>
-              <span class="project-tag">Brass Inlay</span>
-              <span class="project-tag">Dining</span>
-              <span class="project-tag">Handcrafted</span>
-            </div>
-            <div class="project-footer">
-              <div class="project-links">
-                <a href="#contact" class="project-link-btn" title="Inquire Commission"><i class="fa-solid fa-compass-drafting"></i> Inquire</a>
-              </div>
-              <span style="font-size:0.85rem; color:var(--text-subtle);"><i class="fa-solid fa-star" style="color:var(--accent-amber);"></i> Edition 01/10</span>
-            </div>
-          </div>
-        </div>
 
-        <!-- Piece 2 -->
-        <div class="project-card">
-          <div class="project-thumb">
-            <img src="assets/images/furniture_logo.svg" alt="Sculptural Walnut Lounge Chair">
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">Elysian Walnut Lounge Chair</h3>
-            <p class="project-desc">Sculptural hand-carved American black walnut frame paired with deep emerald velvet upholstery and hand-turned brass leg tips.</p>
-            <div class="project-tags">
-              <span class="project-tag">Black Walnut</span>
-              <span class="project-tag">Velvet Upholstery</span>
-              <span class="project-tag">Seating</span>
-              <span class="project-tag">Mid-Century</span>
-            </div>
-            <div class="project-footer">
-              <div class="project-links">
-                <a href="#contact" class="project-link-btn" title="Inquire Commission"><i class="fa-solid fa-compass-drafting"></i> Inquire</a>
-              </div>
-              <span style="font-size:0.85rem; color:var(--text-subtle);"><i class="fa-solid fa-star" style="color:var(--accent-amber);"></i> Award Winner</span>
-            </div>
-          </div>
-        </div>
+    <div class="cards">
 
-        <!-- Piece 3 -->
-        <div class="project-card">
-          <div class="project-thumb">
-            <img src="assets/images/credenza.svg" alt="Minimalist Fluted Credenza">
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">Minimalist Fluted Credenza</h3>
-            <p class="project-desc">Hand-milled fluted teak door panels featuring integrated soft-close concealed hinges, adjustable internal shelving, and brushed brass pulls.</p>
-            <div class="project-tags">
-              <span class="project-tag">Teak Wood</span>
-              <span class="project-tag">Credenza</span>
-              <span class="project-tag">Fluted Panel</span>
-              <span class="project-tag">Custom Storage</span>
-            </div>
-            <div class="project-footer">
-              <div class="project-links">
-                <a href="#contact" class="project-link-btn" title="Inquire Commission"><i class="fa-solid fa-compass-drafting"></i> Inquire</a>
-              </div>
-              <span style="font-size:0.85rem; color:var(--text-subtle);"><i class="fa-solid fa-star" style="color:var(--accent-amber);"></i> Custom Built</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- Tab Pane: Craft & Process -->
-    <div class="tab-pane" id="experienceTab">
       <div class="card">
-        <div class="card-header">
-          <h2 class="card-title"><i class="fa-solid fa-hammer"></i> Artisanal Woodworking Process</h2>
-        </div>
-        <div class="card-body">
-          <div class="timeline">
-            
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-header">
-                <div>
-                  <div class="timeline-role">Phase 1: Timber Selection & Kiln Seasoning</div>
-                  <div class="timeline-company">Sustainably Harvested Hardwoods</div>
-                </div>
-                <span class="timeline-date">Step 01</span>
-              </div>
-              <p class="timeline-desc">Hand-selecting figure-matched lumber slabs. Seasoned in solar kilns to an optimal 6-8% moisture content for lifelong stability.</p>
-            </div>
 
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-header">
-                <div>
-                  <div class="timeline-role">Phase 2: Mortise & Tenon Precision Joinery</div>
-                  <div class="timeline-company">Traditional Woodworking Techniques</div>
-                </div>
-                <span class="timeline-date">Step 02</span>
-              </div>
-              <p class="timeline-desc">Milling interlocking wooden joints—dovetails, mortise-and-tenon, and blind dowels—eliminating mechanical screws for pure structural integrity.</p>
-            </div>
+        <h3>
+          Quality Education
+        </h3>
 
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-header">
-                <div>
-                  <div class="timeline-role">Phase 3: Hand Sculpting & Ergonomic Testing</div>
-                  <div class="timeline-company">Japanese Hand Planes & Spokeshaves</div>
-                </div>
-                <span class="timeline-date">Step 03</span>
-              </div>
-              <p class="timeline-desc">Shaping tactile curves and smooth transitions using hand planes, chisels, and custom sanders until ergonomically flawless.</p>
-            </div>
-
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-header">
-                <div>
-                  <div class="timeline-role">Phase 4: Organic Oil & Beeswax Hand Finishing</div>
-                  <div class="timeline-company">5-Coat Satin Protective Finish</div>
-                </div>
-                <span class="timeline-date">Step 04</span>
-              </div>
-              <p class="timeline-desc">Applying 5 successive hand-rubbed coats of cold-pressed linseed oil and natural beeswax, highlighting grain depth with zero toxic emissions.</p>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Tab Pane: Timbers & Mastery -->
-    <div class="tab-pane" id="skillsTab">
-      <div class="skills-container">
-        
-        <div class="skill-card">
-          <h3 class="skill-category-title"><i class="fa-solid fa-tree" style="color:var(--accent-primary);"></i> Timber Selection & Milling</h3>
-          
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">American Black Walnut</span>
-              <span class="skill-percentage">98%</span>
-            </div>
-            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 98%;"></div></div>
-          </div>
-
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">European White Oak & Quarter-sawn Grain</span>
-              <span class="skill-percentage">95%</span>
-            </div>
-            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 95%;"></div></div>
-          </div>
-
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">Sustainable Teak & Mahogany</span>
-              <span class="skill-percentage">90%</span>
-            </div>
-            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 90%;"></div></div>
-          </div>
-        </div>
-
-        <div class="skill-card">
-          <h3 class="skill-category-title"><i class="fa-solid fa-hammer" style="color:var(--accent-secondary);"></i> Craft Joinery & Detailing</h3>
-          
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">Mortise, Tenon & Dovetail Joinery</span>
-              <span class="skill-percentage">96%</span>
-            </div>
-            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 96%;"></div></div>
-          </div>
-
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">Brass Metal Inlays & Accents</span>
-              <span class="skill-percentage">92%</span>
-            </div>
-            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 92%;"></div></div>
-          </div>
-
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">Organic Hardwax Oil & Hand French Polish</span>
-              <span class="skill-percentage">98%</span>
-            </div>
-            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 98%;"></div></div>
-          </div>
-        </div>
+        <p>
+          Strong academic foundations with engaging teaching
+          and learning.
+        </p>
 
       </div>
+
+
+      <div class="card">
+
+        <h3>
+          Character Development
+        </h3>
+
+        <p>
+          We encourage responsibility, confidence, respect
+          and leadership.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>
+          Experienced Teachers
+        </h3>
+
+        <p>
+          Dedicated educators committed to helping students
+          reach their potential.
+        </p>
+
+      </div>
+
     </div>
 
-    <!-- Tab Pane: Commission Inquiry -->
-    <div class="tab-pane" id="contactTab">
-      <div class="contact-grid">
-        
-        <div class="card">
-          <div class="card-header">
-            <h2 class="card-title"><i class="fa-solid fa-compass-drafting"></i> Inquire Custom Commission</h2>
-          </div>
-          <div class="card-body">
-            <form action="#" method="POST">
-              <div class="form-group">
-                <label class="form-label" for="contactName">Your Full Name</label>
-                <input type="text" id="contactName" class="form-input" placeholder="e.g. Eleanor Vance" required>
-              </div>
+  </section>
 
-              <div class="form-group">
-                <label class="form-label" for="contactEmail">Your Email</label>
-                <input type="email" id="contactEmail" class="form-input" placeholder="e.g. eleanor@interiors.com" required>
-              </div>
 
-              <div class="form-group">
-                <label class="form-label" for="contactMessage">Piece Type & Dimensions / Timber Preference</label>
-                <textarea id="contactMessage" class="form-textarea" placeholder="Tell us about your desired furniture piece, preferred wood species, dimensions, and timeline..." required></textarea>
-              </div>
+  <!-- ================= ABOUT US ================= -->
 
-              <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">
-                <i class="fa-solid fa-paper-plane"></i> Submit Commission Request
-              </button>
-            </form>
+  <section class="about" id="about">
+
+    <div class="about-grid">
+
+      <img
+        class="about-img"
+        src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=85"
+        alt="Highcast Academy school building"
+      >
+
+      <div>
+
+        <h2>
+          About Highcast Academy
+        </h2>
+
+        <p>
+          Highcast Academy is a school committed to academic
+          excellence, personal growth and a positive learning culture.
+        </p>
+
+        <br>
+
+        <p>
+          Our goal is to provide students with the knowledge,
+          skills and values they need for a bright future.
+        </p>
+
+        <br>
+
+        <p>
+          We create a safe and supportive environment where
+          learners can discover their strengths, develop confidence
+          and prepare for life beyond the classroom.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= MANAGEMENT ================= -->
+     <!-- ================= MANAGEMENT CAROUSEL ================= -->
+
+<section class="management" id="management">
+
+  <div class="section-title">
+    <h2>Our Management</h2>
+    <p>Meet the dedicated leaders guiding Highcast Academy.</p>
+  </div>
+
+  <div class="management-carousel">
+
+    <!-- Previous Button -->
+    <button class="carousel-btn prev" onclick="changeManagement(-1)">
+      &#10094;
+    </button>
+
+    <div class="management-slides">
+
+      <!-- Slide 1 -->
+      <div class="management-slide active">
+
+        <div class="management-image">
+          <div class="person-avatar large">
+            A
           </div>
         </div>
+
+        <div class="management-info">
+          <h3>Mrs. Ada Okeke</h3>
+
+          <h4>Principal</h4>
+
+          <p>
+            Mrs. Ada Okeke is the Principal of Highcast Academy.
+            She provides strategic leadership and ensures that
+            students receive quality education in a safe and
+            supportive environment.
+          </p>
+
+          <div class="management-socials">
+            <a href="#">f</a>
+            <a href="#">in</a>
+            <a href="#">✉</a>
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- Slide 2 -->
+      <div class="management-slide">
+
+        <div class="management-image">
+          <div class="person-avatar large">
+            J
+          </div>
+        </div>
+
+        <div class="management-info">
+          <h3>Mr. John Eze</h3>
+
+          <h4>Vice Principal</h4>
+
+          <p>
+            Mr. John Eze supports the Principal in managing the
+            school and works closely with teachers, students
+            and parents to maintain high educational standards.
+          </p>
+
+          <div class="management-socials">
+            <a href="#">f</a>
+            <a href="#">in</a>
+            <a href="#">✉</a>
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- Slide 3 -->
+      <div class="management-slide">
+
+        <div class="management-image">
+          <div class="person-avatar large">
+            G
+          </div>
+        </div>
+
+        <div class="management-info">
+          <h3>Mrs. Grace Udo</h3>
+
+          <h4>Head of Academics</h4>
+
+          <p>
+            Mrs. Grace Udo oversees academic programmes,
+            curriculum development and teaching standards
+            throughout Highcast Academy.
+          </p>
+
+          <div class="management-socials">
+            <a href="#">f</a>
+            <a href="#">in</a>
+            <a href="#">✉</a>
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- Slide 4 -->
+      <div class="management-slide">
+
+        <div class="management-image">
+          <div class="person-avatar large">
+            D
+          </div>
+        </div>
+
+        <div class="management-info">
+          <h3>Mr. Daniel Obi</h3>
+
+          <h4>Director of Administration</h4>
+
+          <p>
+            Mr. Daniel Obi coordinates school administration
+            and supports the smooth operation of Highcast Academy.
+          </p>
+
+          <div class="management-socials">
+            <a href="#">f</a>
+            <a href="#">in</a>
+            <a href="#">✉</a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- Next Button -->
+    <button class="carousel-btn next" onclick="changeManagement(1)">
+      &#10095;
+    </button>
+
+  </div>
+
+
+  <!-- Carousel Dots -->
+
+  <div class="carousel-dots">
+
+    <button
+      class="management-dot active"
+      onclick="showManagement(0)">
+    </button>
+
+    <button
+      class="management-dot"
+      onclick="showManagement(1)">
+    </button>
+
+    <button
+      class="management-dot"
+      onclick="showManagement(2)">
+    </button>
+
+    <button
+      class="management-dot"
+      onclick="showManagement(3)">
+    </button>
+
+  </div>
+
+</section>
+
+
+  <!-- ================= ADMISSION FORM ================= -->
+
+  <section class="admission" id="admission">
+
+    <div class="section-title">
+
+      <h2>
+        Admission Form
+      </h2>
+
+      <p>
+        Complete the form below to begin your application.
+      </p>
+
+    </div>
+
+
+    <form
+      onsubmit="event.preventDefault(); alert('Thank you! Your admission application has been received.');"
+    >
+
+      <div class="form-grid">
 
         <div>
-          <div class="card">
-            <div class="card-header">
-              <h2 class="card-title"><i class="fa-solid fa-warehouse"></i> Studio & Workshop Contact</h2>
-            </div>
-            <div class="card-body">
-              <div class="contact-info-list">
-                
-                <div class="contact-info-item">
-                  <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
-                  <div>
-                    <div class="contact-text-label">Studio Email</div>
-                    <div class="contact-text-value">robert@rhfurniturestudio.com</div>
-                  </div>
-                </div>
 
-                <div class="contact-info-item">
-                  <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
-                  <div>
-                    <div class="contact-text-label">Workshop Direct</div>
-                    <div class="contact-text-value">+1 (503) 912-8401</div>
-                  </div>
-                </div>
+          <label>
+            Student Name
 
-                <div class="contact-info-item">
-                  <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
-                  <div>
-                    <div class="contact-text-label">Workshop Location</div>
-                    <div class="contact-text-value">Industrial District, Portland, OR / Milan</div>
-                  </div>
-                </div>
+            <input
+              type="text"
+              required
+              placeholder="Full name"
+            >
 
-              </div>
-            </div>
-          </div>
+          </label>
+
+        </div>
+
+
+        <div>
+
+          <label>
+            Parent/Guardian Name
+
+            <input
+              type="text"
+              required
+              placeholder="Parent or guardian"
+            >
+
+          </label>
+
+        </div>
+
+
+        <div>
+
+          <label>
+            Email
+
+            <input
+              type="email"
+              required
+              placeholder="Email address"
+            >
+
+          </label>
+
+        </div>
+
+
+        <div>
+
+          <label>
+            Phone Number
+
+            <input
+              type="tel"
+              required
+              placeholder="Phone number"
+            >
+
+          </label>
+
+        </div>
+
+
+        <div>
+
+          <label>
+            Class Applying For
+
+            <select required>
+
+              <option value="">
+                Select class
+              </option>
+
+              <option>
+                Nursery
+              </option>
+
+              <option>
+                Primary
+              </option>
+
+              <option>
+                Junior Secondary
+              </option>
+
+              <option>
+                Senior Secondary
+              </option>
+
+            </select>
+
+          </label>
+
+        </div>
+
+
+        <div>
+
+          <label>
+            Previous School
+
+            <input
+              type="text"
+              placeholder="Previous school"
+            >
+
+          </label>
+
+        </div>
+
+
+        <div class="full">
+
+          <label>
+            Message / Additional Information
+
+            <textarea
+              placeholder="Tell us anything else we should know"
+            ></textarea>
+
+          </label>
+
+        </div>
+
+
+        <div class="full">
+
+          <button
+            class="btn"
+            type="submit"
+          >
+            Submit Application
+          </button>
+
         </div>
 
       </div>
+
+    </form>
+
+  </section>
+
+
+  <!-- ================= CONTACT US ================= -->
+
+  <section class="contact" id="contact">
+
+    <div class="section-title">
+
+      <h2>
+        Contact Us
+      </h2>
+
+      <p>
+        We would be happy to hear from you.
+      </p>
+
     </div>
 
-  </div>
 
-  <!-- Pure CSS Edit Studio Info Modal -->
-  <div class="modal-backdrop" id="editProfileModal">
-    <div class="modal-card">
-      <div class="modal-header">
-        <h3 class="modal-title"><i class="fa-solid fa-sliders"></i> Edit Studio Profile</h3>
-        <label for="modal-edit-toggle" class="modal-close-label"><i class="fa-solid fa-xmark"></i></label>
+    <div class="contact-grid">
+
+      <div class="contact-box">
+
+        <h3>
+          Address
+        </h3>
+
+        <p>
+          12 Excellence Road<br>
+          Lagos, Nigeria
+        </p>
+
       </div>
-      <form action="#">
-        <div class="modal-body">
-          <div class="form-group">
-            <label class="form-label" for="editName">Studio / Artisan Name</label>
-            <input type="text" id="editName" class="form-input" value="Robert Hardy" required>
-          </div>
 
-          <div class="form-group">
-            <label class="form-label" for="editRole">Headline / Specialty</label>
-            <input type="text" id="editRole" class="form-input" value="Master Artisan & Furniture Designer" required>
-          </div>
 
-          <div class="form-group">
-            <label class="form-label" for="editLocation">Location</label>
-            <input type="text" id="editLocation" class="form-input" value="Portland, OR / Milan" required>
-          </div>
+      <div class="contact-box">
 
-          <div class="form-group">
-            <label class="form-label" for="editBio">Design Philosophy</label>
-            <textarea id="editBio" class="form-textarea" required>At Robert Hardy Furniture Studio, every creation is an intersection of sculptural elegance, ergonomic comfort, and generational longevity.</textarea>
-          </div>
-        </div>
+        <h3>
+          Phone
+        </h3>
 
-        <div class="modal-footer">
-          <label for="modal-edit-toggle" class="btn btn-secondary">Cancel</label>
-          <label for="modal-edit-toggle" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> Save Studio Info</label>
-        </div>
-      </form>
+        <p>
+          +234 803 123 4567
+        </p>
+
+      </div>
+
+
+      <div class="contact-box">
+
+        <h3>
+          Email
+        </h3>
+
+        <p>
+          info@highcastacademy.edu.ng
+        </p>
+
+      </div>
+
     </div>
-  </div>
 
-  <!-- Pure CSS Share Studio Link Modal -->
-  <div class="modal-backdrop" id="shareProfileModal">
-    <div class="modal-card">
-      <div class="modal-header">
-        <h3 class="modal-title"><i class="fa-solid fa-share-nodes"></i> Share Studio Portfolio</h3>
-        <label for="modal-share-toggle" class="modal-close-label"><i class="fa-solid fa-xmark"></i></label>
-      </div>
-      <div class="modal-body" style="text-align:center;">
-        <p style="color:var(--text-muted); margin-bottom:1.5rem;">Copy the link below to share Robert Hardy Furniture Studio.</p>
-        <div style="display:flex; gap:0.5rem;">
-          <input type="text" class="form-input" value="https://rhfurniturestudio.com" readonly>
-          <label for="modal-share-toggle" class="btn btn-primary"><i class="fa-regular fa-copy"></i> Done</label>
-        </div>
-      </div>
-    </div>
-  </div>
+  </section>
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer>
+
+    © 2026 Highcast Academy.
+    All rights reserved.
+
+  </footer>
+
+
+  <!-- ================= JAVASCRIPT ================= -->
+ 
+  <script>
+
+  let managementIndex = 0;
+
+  const managementSlides =
+    document.querySelectorAll(".management-slide");
+
+  const managementDots =
+    document.querySelectorAll(".management-dot");
+
+
+  function showManagement(index) {
+
+    if (index >= managementSlides.length) {
+      managementIndex = 0;
+    }
+
+    else if (index < 0) {
+      managementIndex = managementSlides.length - 1;
+    }
+
+    else {
+      managementIndex = index;
+    }
+
+
+    managementSlides.forEach(function(slide) {
+      slide.classList.remove("active");
+    });
+
+
+    managementDots.forEach(function(dot) {
+      dot.classList.remove("active");
+    });
+
+
+    managementSlides[managementIndex]
+      .classList.add("active");
+
+    managementDots[managementIndex]
+      .classList.add("active");
+  }
+
+
+  function changeManagement(direction) {
+
+    showManagement(
+      managementIndex + direction
+    );
+
+  }
+
+
+  // Automatic carousel
+  setInterval(function() {
+
+    changeManagement(1);
+
+  }, 5000);
+
+</script>
 
 </body>
 </html>
